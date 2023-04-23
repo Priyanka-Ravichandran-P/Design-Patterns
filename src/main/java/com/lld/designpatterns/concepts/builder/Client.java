@@ -19,7 +19,9 @@ public class Client {
 			
 			System.out.print("STUDENT :: " + student.toString());
 		}catch(Exception e) {
+			e.printStackTrace();
 			throw new Exception(e);
+			
 		}
 		
 
