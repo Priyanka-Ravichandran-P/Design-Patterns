@@ -47,7 +47,7 @@ public class MultithreadSingleton {
 	 */
 	private static MultithreadSingleton obj2;
 
-	public static synchronized MultithreadSingleton getObj2() {
+	public static MultithreadSingleton getObj2() {
 			if(obj2==null) {
 				synchronized(MultithreadSingleton.class) {
 					if(obj2 == null) {
