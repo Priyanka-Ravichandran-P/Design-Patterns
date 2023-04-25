@@ -14,13 +14,19 @@ public class Flutter {
 	public void setVersion(String version) {
 		System.out.print(" Setting Version As" + version);
 	}
-
-	public UIFactory getUIFactory() {
-		if (platform == SupportPlaform.ANDROID)
-			return new AndroidUIFactory();
-		else if (platform == SupportPlaform.IOS)
-			return new IOSUIFactory();
-		else
-			return null;
-	}
+	
+// Looks like violating OCP so going to Practical Factory Approach
+//	public UIFactory getUIFactory() {
+//		if (platform == SupportPlaform.ANDROID)
+//			return new AndroidUIFactory();
+//		else if (platform == SupportPlaform.IOS)
+//			return new IOSUIFactory();
+//		else
+//			return null;
+//	}
+	
+	// Practical Factory
+		public UIFactory getUIFactory() {
+			return UIFactoryFactory.getUIFactory(platform);
+		}
 }
