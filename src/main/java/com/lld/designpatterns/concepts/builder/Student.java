@@ -8,6 +8,13 @@ public class Student {
 	private long phoneNumber;
 
 
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", id=" + id + ", age=" + age + ", psp=" + psp + ", phoneNumber=" + phoneNumber
+				+ "]";
+	}
+
+
 	private Student(Builder b) {
 		this.age = b.age;
 		this.id = b.id;
@@ -21,11 +28,7 @@ public class Student {
 		return new Builder();
 	}
 
-	@Override
-	public String toString() {
-		return "Student [name=" + name + ", age=" + age + ", psp=" + psp + ", phoneNumber=" + phoneNumber + "]";
-	}
-
+	
 	static class Builder {
 		private String name;
 		private int id;
