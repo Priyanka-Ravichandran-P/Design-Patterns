@@ -12,9 +12,9 @@ public class PathCalculatorFactory {
 	}
 	
  public static PathCalculator getPathCalculator(SupportableMode mode) {
-	 if(mode == SupportableMode.CAR) return new CarPathCalculator();
-	 if(mode == SupportableMode.BIKE) return new BikePathCalculator();
-	 if(mode == SupportableMode.WALK) return new WalkPathCalculator();
+	 if(mode == SupportableMode.CAR) return CarPathCalculator.getInstance();
+	 if(mode == SupportableMode.BIKE) return BikePathCalculator.getInstance();
+	 if(mode == SupportableMode.WALK) return WalkPathCalculator.getInstance();
 	 return null;
  }
 }
