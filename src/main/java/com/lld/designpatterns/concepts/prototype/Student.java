@@ -70,4 +70,10 @@ public class Student implements Prototype<Student> {
 	public void setYearOfEnrollment(int yearOfEnrollment) {
 		this.yearOfEnrollment = yearOfEnrollment;
 	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", age=" + age + ", avgBatchPSP=" + avgBatchPSP + ", batchName="
+				+ batchName + ", yearOfEnrollment=" + yearOfEnrollment + "]";
+	}
 }

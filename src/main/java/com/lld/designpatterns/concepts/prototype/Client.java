@@ -16,6 +16,7 @@ public class Client {
 		System.out.println(juneObj);
 		System.out.println("=======================");
 		
+		
 	}
 	
 	public static void fillUpRegistry(StudentRegistry registry) {
@@ -40,11 +41,14 @@ public class Client {
 		registry.fillRegistry(juneBatchStudent);
 		
 		IntelligentStudent intelligentStudent = new IntelligentStudent();
-		juneBatchStudent.setAvgBatchPSP(98);
-		juneBatchStudent.setBatchName("April Batch");
-		juneBatchStudent.setYearOfEnrollment(2023);
+		intelligentStudent.setAvgBatchPSP(98);
+		intelligentStudent.setBatchName("July Batch");
+		intelligentStudent.setYearOfEnrollment(2023);
 		intelligentStudent.setIq(98);
-		registry.fillRegistry(intelligentStudent);
+		
+		System.out.println(intelligentStudent.clone()); // Just Prototype not Registry
+		System.out.println("=======================");
+		
 	}
 	
 }

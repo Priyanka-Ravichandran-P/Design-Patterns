@@ -20,6 +20,16 @@ public class IntelligentStudent extends Student {
 		return iq;
 	}
 
+	
+
+	@Override
+	public String toString() {
+		return "IntelligentStudent [iq=" + iq + ", getId()=" + getId() + ", getName()=" + getName() + ", getAge()="
+				+ getAge() + ", getAvgBatchPSP()=" + getAvgBatchPSP() + ", getBatchName()=" + getBatchName()
+				+ ", getYearOfEnrollment()=" + getYearOfEnrollment() + ", toString()=" + super.toString()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
+	}
+
 	public void setIq(int iq) {
 		this.iq = iq;
 	}
