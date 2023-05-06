@@ -5,12 +5,7 @@ import com.lld.designpatterns.projects.tictactoe.strategy.BotPlayingStrategy;
 import com.lld.designpatterns.projects.tictactoe.strategy.RandomPlayingStrategy;
 
 public class BotPlayingStrategyFactory {
-//	private BotDifficultyLevel level;
-//
-//	public BotPlayingStrategyFactory(BotDifficultyLevel botDifficultyLevel) {
-//		this.level = botDifficultyLevel;
-//	}
-//	
+	
 	
 	// As of now for all the difficulty levels our bot will play randomly
 	public static BotPlayingStrategy getBotPlayingStrategy(BotDifficultyLevel botDifficultyLevel) {
