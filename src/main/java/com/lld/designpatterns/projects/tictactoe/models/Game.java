@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.lld.designpatterns.projects.tictactoe.exceptions.CustomGameValidation;
-import com.lld.designpatterns.projects.tictactoe.strategy.GameWinningStrategy;
+import com.lld.designpatterns.projects.tictactoe.factory.GameWinningStrategyFactory;
+import com.lld.designpatterns.projects.tictactoe.strategy.gamewinningstrategy.GameWinningStrategy;
 
 public class Game {
 	private Board board;
@@ -125,7 +126,7 @@ public class Game {
 			game.setGameStatus(GameStatus.INPROGRESS);
 			game.setMoves(new ArrayList<Move>());
 			game.setNextPlayerIndex(0);
-			game.setGameWinningStrategy(null); // Have to create strategy
+			game.setGameWinningStrategy(GameWinningStrategyFactory.getGameWinningStrategy()); // Have to create strategy
 			return game;
 
 		}

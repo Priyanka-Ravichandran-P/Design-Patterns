@@ -1,4 +1,4 @@
-package com.lld.designpatterns.projects.tictactoe.strategy;
+package com.lld.designpatterns.projects.tictactoe.strategy.botplayingstrategy;
 
 import com.lld.designpatterns.projects.tictactoe.models.Board;
 import com.lld.designpatterns.projects.tictactoe.models.Move;

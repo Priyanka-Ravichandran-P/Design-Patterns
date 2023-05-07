@@ -1,8 +1,8 @@
 package com.lld.designpatterns.projects.tictactoe.factory;
 
 import com.lld.designpatterns.projects.tictactoe.models.BotDifficultyLevel;
-import com.lld.designpatterns.projects.tictactoe.strategy.BotPlayingStrategy;
-import com.lld.designpatterns.projects.tictactoe.strategy.RandomPlayingStrategy;
+import com.lld.designpatterns.projects.tictactoe.strategy.botplayingstrategy.BotPlayingStrategy;
+import com.lld.designpatterns.projects.tictactoe.strategy.botplayingstrategy.RandomPlayingStrategy;
 
 public class BotPlayingStrategyFactory {
 	

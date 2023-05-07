@@ -1,7 +1,7 @@
 package com.lld.designpatterns.projects.tictactoe.models;
 
 import com.lld.designpatterns.projects.tictactoe.factory.BotPlayingStrategyFactory;
-import com.lld.designpatterns.projects.tictactoe.strategy.BotPlayingStrategy;
+import com.lld.designpatterns.projects.tictactoe.strategy.botplayingstrategy.BotPlayingStrategy;
 
 public class Bot extends Player {
 	private BotDifficultyLevel botDifficultyLevel;
