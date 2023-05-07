@@ -16,7 +16,8 @@ public class Game {
 	private Player winner;
 	private GameWinningStrategy gameWinningStrategy;
 
-	private Game() {}
+	private Game() {
+	}
 
 	public Board getBoard() {
 		return board;
@@ -74,19 +75,22 @@ public class Game {
 		this.gameWinningStrategy = gameWinningStrategy;
 	}
 
-	
 	public static GameBuilder builder() {
 		return new GameBuilder();
 	}
 
 	public void undo() {
-		
+
 	}
-	
+
 	public void makeNextMove() {
-		
+
 	}
-	
+
+	public void display() {
+		this.getBoard().display();
+	}
+
 	public static class GameBuilder {
 		private int dimension;
 		private List<Player> players;
@@ -95,12 +99,14 @@ public class Game {
 
 		}
 
-		public int getDimension() {
-			return dimension;
+		public GameBuilder setDimension(int dimension) {
+			this.dimension = dimension;
+			return this;
 		}
 
-		public List<Player> getPlayers() {
-			return players;
+		public GameBuilder setPlayers(List<Player> players) {
+			this.players = players;
+			return this;
 		}
 
 		public boolean validate() {
