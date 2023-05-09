@@ -40,22 +40,22 @@ public class TicTacToeGame {
 			String botSymbol = scanner.next();
 			players.add(new Bot(botSymbol.charAt(0), botName, BotDifficultyLevel.EASY));
 		}
-		scanner.close();
+		
 		GameController gameController = new GameController();
 		Game game = gameController.createGame(dimension, players);
 
 		while (gameController.getGameStatus(game).equals(GameStatus.INPROGRESS)) {
 			System.out.println("This is the board size");
 			gameController.displayBoard(game);
-			System.out.println("Play your next move");
 			gameController.executeNextMove(game);
 		}
 
-		System.out.println("Result of the Game is");
+		System.out.println("Result of the Game :: ");
 
 		if (!gameController.getGameStatus(game).equals(GameStatus.DRAW)) {
-			System.out.println("The Winner is " + gameController.getWinner(game).getName());
 			gameController.displayBoard(game);
+			System.out.println("The Winner is " + gameController.getWinner(game).getName());
+			
 		} else {
 			System.out.println("The Match is Draw ");
 		}

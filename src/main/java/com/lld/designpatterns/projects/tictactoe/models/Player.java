@@ -15,12 +15,11 @@ public class Player {
 	
 	public Move decideMove(Board board) {
 		
-		Scanner scan = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("Please tell the row");
-		int row = scan.nextInt();
+		int row = scanner.nextInt();
 		System.out.println("Please tell the column");
-		int column = scan.nextInt();
-		scan.close();
+		int column = scanner.nextInt();
 		return new Move(this, new Cell(row, column));
 	}
 	

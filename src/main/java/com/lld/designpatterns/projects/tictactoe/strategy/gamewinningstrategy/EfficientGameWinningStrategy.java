@@ -15,7 +15,8 @@ public class EfficientGameWinningStrategy implements GameWinningStrategy {
 	HashMap<Character, Integer> topRightDiagonalMap = new HashMap<>();
 	private int dimension;
 
-	public EfficientGameWinningStrategy() {
+	public EfficientGameWinningStrategy(int dimension) {
+		this.dimension = dimension;
 		for (int i = 0; i < dimension; i++) {
 			listOfRowMap.add(new HashMap<Character, Integer>());
 			listOfColMap.add(new HashMap<Character, Integer>());
@@ -27,7 +28,7 @@ public class EfficientGameWinningStrategy implements GameWinningStrategy {
 	}
 
 	boolean isTopRightDiagonal(int row, int col) {
-		return row + col == dimension;
+		return ((row + col) + 1) == dimension;
 	}
 
 	@Override
@@ -36,10 +37,8 @@ public class EfficientGameWinningStrategy implements GameWinningStrategy {
 		int row = movedCell.getRow();
 		int col = movedCell.getColumn();
 		char symbol = lastMovePlayer.getSymbol();
-
 		listOfRowMap.get(row).put(symbol, listOfRowMap.get(row).getOrDefault(symbol, 0) + 1);
 
-		listOfColMap.get(col).put(symbol, listOfColMap.get(col).getOrDefault(symbol, 0) + 1);
 		listOfColMap.get(col).put(symbol, listOfColMap.get(col).getOrDefault(symbol, 0) + 1);
 
 		if (isTopLeftDiagonal(row, col))

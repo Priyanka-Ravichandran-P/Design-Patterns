@@ -1,20 +1,20 @@
 package com.lld.designpatterns.projects.tictactoe.models;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Board {
-	private List<List<Cell>> board;
+	private ArrayList<ArrayList<Cell>> board;
 
-	public List<List<Cell>> getBoard() {
+	public ArrayList<ArrayList<Cell>> getBoard() {
 		return board;
 	}
 
-	public void setBoard(List<List<Cell>> board) {
+	public void setBoard(ArrayList<ArrayList<Cell>> board) {
 		this.board = board;
 	}
 
 	public Board(int dimension) {
+		this.board = new ArrayList<ArrayList<Cell>>();
 		for (int i = 0; i < dimension; i++) {
 			this.board.add(new ArrayList<Cell>());
 			for (int j = 0; j < dimension; j++) {
@@ -27,12 +27,13 @@ public class Board {
 		for (int i = 0; i < board.size(); i++) {
 			for (int j = 0; j < board.size(); j++) {
 				if(board.get(i).get(j).state == CellState.EMPTY)
-					System.out.println("|  |");
+					System.out.print("|   |");
 				else if(board.get(i).get(j).state == CellState.BLOCKED)
-					System.out.println("| XXX |");
+					System.out.print("| XXX |");
 				else
-					System.out.println("| " + board.get(i).get(j).getPlayer().getSymbol() + " |");
+					System.out.print("| " + board.get(i).get(j).getPlayer().getSymbol() + " |");
 			}
+			System.out.println();
 		}
 	}
 }

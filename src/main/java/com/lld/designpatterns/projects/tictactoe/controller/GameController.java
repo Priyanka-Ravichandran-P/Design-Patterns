@@ -13,7 +13,7 @@ public class GameController {
 
 	public Game createGame(int dimension, List<Player> players) {
 		try {
-			return Game.builder().setDimension(2).setPlayers(players).build();
+			return Game.builder().setDimension(dimension).setPlayers(players).build();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

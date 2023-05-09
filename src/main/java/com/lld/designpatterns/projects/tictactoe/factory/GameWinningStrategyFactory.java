@@ -5,7 +5,7 @@ import com.lld.designpatterns.projects.tictactoe.strategy.gamewinningstrategy.Ga
 
 public class GameWinningStrategyFactory {
 
-	public static GameWinningStrategy getGameWinningStrategy() {
-		return new EfficientGameWinningStrategy();
+	public static GameWinningStrategy getGameWinningStrategy(int dimension) {
+		return new EfficientGameWinningStrategy(dimension);
 	}
 }

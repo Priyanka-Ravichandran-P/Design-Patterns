@@ -79,12 +79,48 @@ public class Game {
 		return new GameBuilder();
 	}
 
+	@Override
+	public String toString() {
+		return "Game [board=" + board + ", players=" + players + ", moves=" + moves + ", nextPlayerIndex="
+				+ nextPlayerIndex + ", gameStatus=" + gameStatus + ", winner=" + winner + ", gameWinningStrategy="
+				+ gameWinningStrategy + "]";
+	}
+
 	public void undo() {
 
 	}
 
 	public void makeNextMove() {
+		Player player = players.get(nextPlayerIndex);
+		System.out.println("This is Player " + player.getName() + "'s turn");
+		Move move = player.decideMove(this.getBoard());
+		Cell cell = move.getCell();
+		int row = cell.getRow();
+		int column = cell.getColumn();
 
+		System.out.println("you have moved to " + row + " row, " + column + " column");
+
+		if (cell.getState().equals(CellState.BLOCKED) || cell.getState().equals(CellState.FILLED)) {
+			System.out.println("The move to " + row + " row, " + column + " column is not valid. Please try again");
+			makeNextMove();
+		} else {
+//			cell.setState(CellState.FILLED);
+//			cell.setPlayer(player);
+			this.board.getBoard().get(row).get(column).setState(CellState.FILLED);
+			this.board.getBoard().get(row).get(column).setPlayer(player);
+		}
+
+		// To maintain final move separetly
+		Move finalMove = new Move(move.getPlayer(), board.getBoard().get(row).get(column));
+		this.moves.add(finalMove);
+		
+		if (this.gameWinningStrategy.updateBoardAndCheckWinner(player, this.getBoard(), finalMove.getCell())) {
+			this.setWinner(player);
+			this.setGameStatus(GameStatus.ENDED);
+
+		}
+		nextPlayerIndex++;
+		nextPlayerIndex %= players.size();
 	}
 
 	public void display() {
@@ -132,7 +168,7 @@ public class Game {
 			game.setGameStatus(GameStatus.INPROGRESS);
 			game.setMoves(new ArrayList<Move>());
 			game.setNextPlayerIndex(0);
-			game.setGameWinningStrategy(GameWinningStrategyFactory.getGameWinningStrategy()); // Have to create strategy
+			game.setGameWinningStrategy(GameWinningStrategyFactory.getGameWinningStrategy(dimension)); // Have to create strategy
 			return game;
 
 		}
