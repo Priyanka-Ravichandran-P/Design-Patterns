@@ -1,5 +1,8 @@
 package com.lld.designpatterns.projects.parkinglot.model;
 
-public class ParkingFloor {
+import java.util.List;
 
+public class ParkingFloor {
+	private int floorNumber;
+	private List<ParkingSpot> parkingSpots;
 }
