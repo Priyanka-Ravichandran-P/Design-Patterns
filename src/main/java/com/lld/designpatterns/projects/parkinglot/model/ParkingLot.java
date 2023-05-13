@@ -2,7 +2,7 @@ package com.lld.designpatterns.projects.parkinglot.model;
 
 import java.util.List;
 
-public class ParkingLot {
+public class ParkingLot extends BaseModel{
 	private List<ParkingFloor> parkingFloors;
 	private List<Gate> gates;
 	private ParkingLotStatus parkingLotStatus;
